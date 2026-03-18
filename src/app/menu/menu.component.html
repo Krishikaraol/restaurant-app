@@ -1,0 +1,56 @@
+<div id="menu" class="page-section active">
+  <div class="container py-5">
+    <h2 class="text-center mb-5 fw-bold">Our Special Menu</h2>
+
+    <!-- Filter Buttons -->
+    <div class="text-center mb-4">
+      <button
+        class="btn btn-outline-dark rounded-pill me-2"
+        [class.active]="activeCategory === 'all'"
+        (click)="filterMenu('all')"
+      >
+        All
+      </button>
+      <button
+        class="btn btn-outline-dark rounded-pill me-2"
+        [class.active]="activeCategory === 'thali'"
+        (click)="filterMenu('thali')"
+      >
+        Thali
+      </button>
+      <button
+        class="btn btn-outline-dark rounded-pill me-2"
+        [class.active]="activeCategory === 'snacks'"
+        (click)="filterMenu('snacks')"
+      >
+        Snacks
+      </button>
+      <button
+        class="btn btn-outline-dark rounded-pill"
+        [class.active]="activeCategory === 'drinks'"
+        (click)="filterMenu('drinks')"
+      >
+        Drinks
+      </button>
+    </div>
+
+    <div class="row g-4" id="menuGrid">
+      <div class="col-lg-4 col-md-6" *ngFor="let item of filteredItems">
+        <div class="menu-card d-flex flex-column">
+          <div class="menu-img-container">
+            <img [src]="item.img" class="menu-img" [alt]="item.name">
+          </div>
+          <div class="p-3 flex-grow-1 d-flex flex-column justify-content-between">
+            <div>
+              <h5>{{ item.name }}</h5>
+              <p class="price-tag">₹{{ item.price }}</p>
+            </div>
+            <button class="btn btn-primary-custom" (click)="addToCart(item.id)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+:root {
+  --primary: #d35400; /* Burnt Orange */
+  --secondary: #8b4513; /* Saddle Brown */
+  --accent: #f1c40f; /* Gold */
+  --background: #fdfbf7; /* Off-White/Cream */
+  --text-dark: #2c3e50;
+  --text-light: #ffffff;
+}
+
+body {
+  font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text-dark);
+  padding-top: 85px; /* Space for fixed navbar */
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: "Playfair Display", serif;
+  color: var(--secondary);
+}
+
+p {
+  line-height: 1.8;
+}
+
+/* Section Spacing */
+.py-5 {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+@media (max-width: 767px) {
+  .py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Section Visibility and Micro-Animations */
+.page-section {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utility shadow classes */
+.shadow-hover {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.shadow-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(139, 69, 19, 0.12) !important;
+}
